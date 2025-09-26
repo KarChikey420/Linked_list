@@ -9,11 +9,19 @@ def delete_at_end(head):
     if head.next is None:
         return None
     
-    curr=head
-    while curr.next.next!=None:
-        curr=curr.next
-    curr.next=None
-    return head
+    curr=head.next
+    pre=head
+    while curr.next!=None:
+       pre=curr
+       curr=curr.next
+    pre.next=None
+    return head 
+
+    # curr=head
+    # while curr.next.next!=None:
+    #     curr=curr.next
+    # curr.next=None
+    # return head
 
 def printList(head):
     curr = head
