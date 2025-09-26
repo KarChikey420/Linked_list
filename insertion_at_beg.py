@@ -3,26 +3,26 @@ class Node:
         self.data=data
         self.next=None
 
-def insert_at_beginning(head,data):
+def insert_at_beg(head,data):
     new_node=Node(data)
     new_node.next=head
-    return new_node
+    head=new_node
+    return head
 
-        
-node =Node(10)
-node1=Node(20)
-node2=Node(30)
+def print_list(head):
+    current=head
+    while current!=None:
+        print(current.data,end="->")
+        current=current.next
 
-node.next=node1
-node1.next=node2
-node2.next=None
-
-head=node
-
-head=insert_at_beginning(head,5)
-
-current=head
-while current is not None:
-    print(current.data,end='<-')
-    current=current.next
-print("none")
+if __name__=="__main__":
+    head=Node(10)
+    head.next=Node(20)
+    head.next.next=Node(30)
+    
+    print("Original list:")
+    print_list(head)
+    
+    head=insert_at_beg(head,5)
+    print("\nList after insertion at beginning:")
+    print_list(head)
