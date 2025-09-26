@@ -1,34 +1,33 @@
 class Node:
-  def __init__(self,data):
-    self.data=data
-    self.next=None
-    
-def insert_at_end(head,data):
-    new_node=Node(data)
-    current=head
-    
-    while current.next:
-        current=current.next
+    def __init__(self,data):
+        self.data=data
+        self.next=None
         
-    current.next=new_node
+def insertAtEnd(head,data):
+    newNode=Node(data)
+    if head is None:
+        return newNode
+    curr=head
+    while curr.next!=None:
+        curr=curr.next
+    curr.next=newNode
+    newNode.next=None
     return head
+
+def printList(head):
+    curr = head
+    while curr:
+        print(curr.data, end="")
+        if curr.next:
+            print(" -> ", end="")
+        curr = curr.next
+    print()
+
+if __name__ == "__main__":
+    head = Node(1)
+    head.next = Node(2)
+    head.next.next = Node(4)
     
-
-node=Node(10)
-node1=Node(20)
-node2=Node(30)
-
-node.next=node1
-node1.next=node2
-node2.next=None
-
-head=node 
-
-head=insert_at_end(head,40)
-
-current=head
-while current:
-    print(current.data,"<-")
-    current=current.next
-    
-print("none")
+    val = 3
+    head = insertAtEnd(head,val)
+    printList(head)
