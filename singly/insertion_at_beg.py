@@ -2,8 +2,8 @@ class Node:
     def __init__(self,data):
         self.data=data
         self.next=None
-
-def insert_at_beg(head,data):
+    
+def insert_at_begning(head,data):
     new_node=Node(data)
     new_node.next=head
     head=new_node
@@ -20,9 +20,5 @@ if __name__=="__main__":
     head.next=Node(20)
     head.next.next=Node(30)
     
-    print("Original list:")
-    print_list(head)
-    
-    head=insert_at_beg(head,5)
-    print("\nList after insertion at beginning:")
-    print_list(head)
+    head=insert_at_begning(head,1)
+    print_list(head)        
