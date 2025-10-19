@@ -2,32 +2,27 @@ class Node:
     def __init__(self,data):
         self.data=data
         self.next=None
-        
-def insertAtEnd(head,data):
-    newNode=Node(data)
-    if head is None:
-        return newNode
-    curr=head
-    while curr.next!=None:
-        curr=curr.next
-    curr.next=newNode
-    newNode.next=None
-    return head
-
-def printList(head):
-    curr = head
-    while curr:
-        print(curr.data, end="")
-        if curr.next:
-            print(" -> ", end="")
-        curr = curr.next
-    print()
-
-if __name__ == "__main__":
-    head = Node(1)
-    head.next = Node(2)
-    head.next.next = Node(4)
     
-    val = 3
-    head = insertAtEnd(head,val)
-    printList(head)
+def insert_at_end(head,data):
+    new_node=Node(data)
+    current=head
+    while current.next!=None:
+        current=current.next
+    current.next=new_node
+    new_node.next=None
+    return head
+    
+def print_list(head):
+    current=head
+    while current!=None:
+        print(current.data,end="->")
+        current=current.next
+
+if __name__=="__main__":
+    head=Node(10)
+    head.next=Node(20)
+    head.next.next=Node(30)
+    
+    head=insert_at_end(head,40)
+    print_list(head)
+    
