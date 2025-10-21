@@ -1,21 +1,23 @@
 class Node:
     def __init__(self,data):
-       self.data=data
-       self.next=None
+        self.data=data
+        self.next=None
 
-def sum_of_node(head):
-    curr=head
+def sum_element(head):
     sum=0
-    while curr!=None:
-        sum+=curr.data
-        curr=curr.next
+    current=head
+    while current!=None:
+        sum+=current.data
+        current=current.next
     return sum
-
-if __name__=="__main__":
-    head=Node(1)
-    head.next=Node(2)
-    head.next.next=Node(3)
-    head.next.next.next=Node(4)
     
-    sum=sum_of_node(head)
-    print(sum)
+if __name__=="__main__":
+    head=Node(10)
+    head.next=Node(20)
+    head.next.next=Node(30)
+    head.next.next.next=Node(40)
+    head=sum_element(head)
+    print(head)
+    
+    
+    
