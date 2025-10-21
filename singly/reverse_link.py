@@ -1,30 +1,31 @@
 class Node:
-    def __init__(self, data):
-        self.data = data
-        self.next = None
-        
-def reverse(head):
-    prev = None
-    curr = head
-    
-    while curr is not None:
-        next = curr.next
-        curr.next = prev
-        prev = curr
-        curr = next
-    return prev
+    def __init__(self,data):
+        self.data=data
+        self.next=None
+
+def reverse_element(head):
+   previous=None
+   current=head
+   while current!=None:
+       next_val=current.next
+       current.next=previous
+       previous=current
+       current=next_val
+   return previous
 
 def print_list(head):
-    curr = head
-    while curr is not None:
-        print(curr.data, end=" -> ")
-        curr = curr.next
-    print("None")
+    current=head
+    while current!=None:
+        print(current.data,end="->")
+        current=current.next
 
-if __name__ == "__main__":
-    head = Node(1)
-    head.next = Node(2)
-    head.next.next = Node(3)
+if __name__=="__main__":
+    head=Node(10)
+    head.next=Node(20)
+    head.next.next=Node(30)
+    head.next.next.next=Node(40)
+    head=reverse_element(head)
+    print(print_list(head))
     
-    head = reverse(head) 
-    print_list(head)
+    
+    
