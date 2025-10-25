@@ -1,30 +1,38 @@
 class Node:
-    def __init__(self, data):
-        self.data = data
-        self.next = None
-
-def find_middle(head):
-    slow = head
-    fast = head
+    def __init__(self,data):
+        self.data=data
+        self.next=None
     
-    while fast and fast.next:
-        slow = slow.next
-        fast = fast.next.next
+def middle_node(head):
+    slow=head
+    fast=head
     
-    return slow.data  
-
+    while fast!=None and fast.next!=None:
+        slow=slow.next
+        fast=fast.next.next
+    return slow
+    
 def print_list(head):
-    current = head
-    while current:
-        print(current.data, end=" -> ")
-        current = current.next
-    print("None")
+    current=head
+    while current!=None:
+        print(current.data,end="->")
+        current=current.next
 
-head = Node(1)
-head.next = Node(2)
-head.next.next = Node(3)
-head.next.next.next = Node(4)
-head.next.next.next.next = Node(5)
+if __name__=="__main__":
+    head=Node(10)
+    head.next=Node(20)
+    head.next.next=Node(30)
+    head.next.next.next=Node(40)
+    head.next.next.next.next=Node(50)
+    
+    mid=middle_node(head)
+    print("middle node",mid.data)
 
-print_list(head)
-print("Middle element:", find_middle(head))
+
+
+
+
+
+
+
+    
