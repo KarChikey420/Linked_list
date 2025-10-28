@@ -4,7 +4,7 @@ class Node:
         self.next=None
 
 def sum_element(head):
-    sum=0
+    add=0
     current=head
     while current!=None:
         sum+=current.data
