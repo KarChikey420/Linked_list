@@ -2,17 +2,16 @@ class Node:
     def __init__(self,data):
         self.data=data
         self.next=None
-    
-def reverse_link(head):
-    previous=None
+
+def reverse(head):
     current=head
-    
+    prev=None
     while current!=None:
-        next_node=current.next
-        current.next=previous
-        previous=current
-        current=next_node
-    return previous
+        next_val=current.next
+        current.next=prev
+        prev=current
+        current=next_val
+    return prev
     
 def print_list(head):
     current=head
@@ -27,13 +26,7 @@ if __name__=="__main__":
     head.next.next.next=Node(40)
     head.next.next.next.next=Node(50)
     
-    reverse=reverse_link(head)
+    reverse=reverse(head)
     print_list(reverse)
 
-
-
-
-
-
-
-    
+   
