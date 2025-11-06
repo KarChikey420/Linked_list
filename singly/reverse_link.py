@@ -5,20 +5,21 @@ class Node:
 
 def reverse(head):
     current=head
-    prev=None
+    pre=None
+    
     while current!=None:
-        next_val=current.next
-        current.next=prev
-        prev=current
-        current=next_val
-    return prev
+        next_value=current.next
+        current.next=pre
+        pre=current
+        current=next_value
+    return pre
     
 def print_list(head):
     current=head
     while current!=None:
         print(current.data,end="->")
         current=current.next
-
+    print("None")
 if __name__=="__main__":
     head=Node(10)
     head.next=Node(20)
