@@ -6,11 +6,11 @@ class Node:
 def find_middle(head):
     slow=head
     fast=head
-    while fast!=None and fast.next!=None:
+    if fast!=None and fast.next!=None:
         slow=slow.next
         fast=fast.next.next
-    return slow
-    
+    return slow 
+
 def print_list(head):
     current=head
     while current!=None:
