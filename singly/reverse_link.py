@@ -4,15 +4,14 @@ class Node:
           self.next=None
           
 def Reverse(head):
+    pre=None
     current=head
-    previous=None
-    
-    while current!=None:
-        next_value=current.next
-        current.next=previous
-        previous=current
-        current=next_value
-    return previous
+    while current:
+        next_val=current.next
+        current.next=pre
+        pre=current
+        current=next_val
+    return pre
 
 def print_list(head):
     current=head
