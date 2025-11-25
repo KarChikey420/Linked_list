@@ -60,6 +60,15 @@ def is_palindrome(head):
         second_half=second_half.next
     return True
 
+# def isPalindrome(head):
+#         values=[]
+
+#         current=head
+#         while current:
+#             values.append(current.data)
+#             current=current.next
+#         return values==values[::-1] 
+
 if __name__=="__main__":
     head=Node(1)
     head.next=Node(2)
